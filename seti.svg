@@ -1,0 +1,5 @@
+<!-- SVG rendering the letter "S" using text element -->
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Draw the letter S -->
+  <text x="10" y="70" font-family="Arial" font-size="80" fill="black">S</text>
+</svg>
