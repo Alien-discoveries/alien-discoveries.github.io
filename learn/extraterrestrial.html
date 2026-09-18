@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extraterrestrial Life – Possibility & Evidence</title>
+  <style>
+    :root {
+      --bg: #050814;
+      --card-bg: #0c1224;
+      --accent: #00b3ff;
+      --accent-soft: #4fd1ff;
+      --text-main: #f5f7ff;
+      --text-muted: #a3b0d9;
+      --border-soft: #1b2340;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #101735 0, #050814 55%, #000000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px 20px 10px;
+      border-bottom: 1px solid var(--border-soft);
+      background: linear-gradient(to right, rgba(0, 179, 255, 0.08), transparent);
+    }
+
+    .site-title {
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .site-title span {
+      color: var(--accent-soft);
+    }
+
+    .page-title {
+      margin: 8px 0 4px;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      background: rgba(12, 18, 36, 0.8);
+    }
+
+    .pill.highlight {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+      background: rgba(0, 179, 255, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .card h3 {
+      margin-top: 18px;
+      font-size: 15px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 6px 0 10px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 6px 0 10px;
+    }
+
+    .card li {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-soft);
+      font-size: 14px;
+    }
+
+    .metric-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+    }
+
+    .bar {
+      position: relative;
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: #050814;
+      margin-left: 12px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      position: absolute;
+      inset: 0;
+      width: var(--value, 50%);
+      background: linear-gradient(to right, var(--accent), var(--accent-soft));
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      background: rgba(5, 8, 20, 0.9);
+    }
+
+    .badge.strong {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 8px;
+    }
+
+    a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .back-link span {
+      font-size: 16px;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="site-title">
+      <span>Alien Discoveries</span> · Life Probability Briefing
+    </div>
+    <h1 class="page-title">Extraterrestrial Life</h1>
+    <p class="subtitle">How likely is life beyond Earth?</p>
+  </header>
+
+  <main>
+    <a href="/index.html" class="back-link">
+      <span>←</span> Back to news feed
+    </a>
+
+    <div class="pill-row">
+      <div class="pill highlight">Life Probability</div>
+      <div class="pill">SETI Searches</div>
+      <div class="pill">Narrowband Signals</div>
+      <div class="pill">Astrobiology</div>
+    </div>
+
+    <div class="grid">
+      <!-- Left: Explanation / science content -->
+      <article class="card">
+        <h2>Is extraterrestrial life possible?</h2>
+        <p>
+          Modern astronomy has revealed that planets are common throughout the galaxy. Many orbit
+          within regions where liquid water could exist, and some show hints of complex atmospheres.
+          These discoveries make the possibility of extraterrestrial life scientifically plausible,
+          even though no confirmed detection has been made yet.
+        </p>
+
+        <h3>Why scientists take it seriously</h3>
+        <ul>
+          <li>There are billions of stars in our galaxy, many with planetary systems.</li>
+          <li>Some exoplanets lie in the “habitable zone,” where temperatures allow liquid water.</li>
+          <li>Organic molecules and building blocks of life have been found in space and on comets.</li>
+          <li>Life on Earth emerged relatively early in the planet’s history, suggesting it may not be rare.</li>
+        </ul>
+
+        <h3>Role of SETI and signal searches</h3>
+        <p>
+          During targeted searches, researchers often detect huge numbers of narrowband radio signals.
+          In one campaign, nearly 74 million such signals were recorded, but almost all were quickly
+          identified as human-made interference from satellites, aircraft, and ground-based transmitters.
+          This illustrates both the challenge and the rigor of searching for genuine extraterrestrial
+          technosignatures.
+        </p>
+
+        <p>
+          By carefully filtering out known sources of interference, scientists can focus on the rare
+          signals that do not match human technology or natural astrophysical processes. So far, no
+          signal has passed all tests to be considered confirmed evidence of extraterrestrial intelligence,
+          but each search improves our methods and understanding.
+        </p>
+
+        <h3>Types of evidence scientists look for</h3>
+        <ul>
+          <li>Persistent, structured radio signals that cannot be explained by natural sources.</li>
+          <li>Atmospheric compositions on exoplanets that suggest biological activity (e.g., unusual gas mixtures).</li>
+          <li>Surface or spectral features that hint at oceans, clouds, or seasonal changes.</li>
+          <li>Unusual energy use or technosignatures that might indicate advanced civilizations.</li>
+        </ul>
+
+        <p class="note">
+          This page summarizes how scientists think about the possibility of extraterrestrial life
+          using current data, signal searches, and astrobiology. It does not claim any confirmed
+          detection, but explains why the question remains open and scientifically active.
+        </p>
+      </article>
+
+      <!-- Right: probability / metrics panel -->
+      <aside class="card">
+        <h2>Extraterrestrial Life Outlook</h2>
+        <p>
+          A science-informed view of how likely life might be elsewhere, based on current observations
+          and ongoing searches.
+        </p>
+
+        <div class="metric-row">
+          <div class="metric">
+            <div>
+              <div class="metric-label">Life plausibility</div>
+              <div>High, but unconfirmed</div>
+            </div>
+            <div class="bar" aria-label="Life plausibility">
+              <div class="bar-fill" style="--value: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="metric">
+            <div>
+              <div class="metric-label">Evidence strength</div>
+              <div>Indirect only</div>
+            </div>
+            <div class="bar" aria-label="Evidence strength">
+              <div class="bar-fill" style="--value: 45%;"></div>
+            </div>
+          </div>
+
+          <div class="metric">
+            <div>
+              <div class="metric-label">Technosignature detection</div>
+              <div>None confirmed</div>
+            </div>
+            <div class="bar" aria-label="Technosignature detection">
+              <div class="bar-fill" style="--value: 20%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Current research focus</h3>
+        <ul>
+          <li>Surveying exoplanets for atmospheric biosignatures.</li>
+          <li>Monitoring radio bands for unusual, persistent signals.</li>
+          <li>Studying icy moons and subsurface oceans in our own solar system.</li>
+          <li>Refining models of how life might arise under different conditions.</li>
+        </ul>
+
+        <h3>Interpretation of null results</h3>
+        <p>
+          The absence of confirmed signals or biosignatures so far does not prove that life is rare.
+          It may simply reflect the limits of our instruments, search strategies, and the small fraction
+          of the galaxy we have examined in detail. Each non-detection helps refine where and how we
+          look next.
+        </p>
+
+        <div class="badge-row">
+          <span class="badge strong">No confirmed life</span>
+          <span class="badge">High scientific interest</span>
+          <span class="badge">Search ongoing</span>
+          <span class="badge">Data-driven</span>
+        </div>
+
+        <p class="note">
+          To see how specific observations and signal searches connect to these ideas, return to the
+          <a href="/index.html">Alien Discoveries news feed</a> and explore recent reports.
+        </p>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
