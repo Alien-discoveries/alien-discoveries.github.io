@@ -1,0 +1,1 @@
+If this is your site, make sure that the filename case matches the URL as well as any file permissions
