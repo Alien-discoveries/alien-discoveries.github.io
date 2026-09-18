@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type II Civilizations – Stellar-Scale Energy</title>
+  <style>
+    :root {
+      --bg: #050814;
+      --card-bg: #0c1224;
+      --accent: #00b3ff;
+      --accent-soft: #4fd1ff;
+      --text-main: #f5f7ff;
+      --text-muted: #a3b0d9;
+      --border-soft: #1b2340;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #101735 0, #050814 55%, #000000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 24px 20px 10px;
+      border-bottom: 1px solid var(--border-soft);
+      background: linear-gradient(to right, rgba(0, 179, 255, 0.08), transparent);
+    }
+
+    .site-title {
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .site-title span {
+      color: var(--accent-soft);
+    }
+
+    .page-title {
+      margin: 8px 0 4px;
+      font-size: 26px;
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      background: rgba(12, 18, 36, 0.8);
+    }
+
+    .pill.highlight {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+      background: rgba(0, 179, 255, 0.08);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      padding: 18px 18px 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .card h3 {
+      margin-top: 18px;
+      font-size: 15px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 6px 0 10px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 6px 0 10px;
+    }
+
+    .card li {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-soft);
+      font-size: 14px;
+    }
+
+    .metric-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+    }
+
+    .bar {
+      position: relative;
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: #050814;
+      margin-left: 12px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      position: absolute;
+      inset: 0;
+      width: var(--value, 50%);
+      background: linear-gradient(to right, var(--accent), var(--accent-soft));
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      background: rgba(5, 8, 20, 0.9);
+    }
+
+    .badge.strong {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+    }
+
+    .note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 8px;
+    }
+
+    a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .back-link span {
+      font-size: 16px;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="site-title">
+      <span>Alien Discoveries</span> · Technosignature Watch
+    </div>
+    <h1 class="page-title">Type II Civilizations</h1>
+    <p class="subtitle">Stellar-scale energy users on the Kardashev scale</p>
+  </header>
+
+  <main>
+    <a href="/index.html" class="back-link">
+      <span>←</span> Back to news feed
+    </a>
+
+    <div class="pill-row">
+      <div class="pill highlight">Kardashev Scale</div>
+      <div class="pill">Energy Harvesting</div>
+      <div class="pill">Technosignatures</div>
+      <div class="pill">Speculative Astrophysics</div>
+    </div>
+
+    <div class="grid">
+      <!-- Left: Explanation / Science blog content -->
+      <article class="card">
+        <h2>What is a Type II Civilization?</h2>
+        <p>
+          On the Kardashev scale, a Type II civilization is one that can harness
+          most or all of the energy output of its host star. Instead of relying
+          solely on planetary resources, this kind of civilization builds
+          megastructures or advanced technologies capable of capturing, storing,
+          and redirecting stellar energy on an enormous scale.
+        </p>
+
+        <h3>Key characteristics</h3>
+        <ul>
+          <li>Operates at roughly the energy output of a star, not just a planet.</li>
+          <li>May construct large-scale structures (e.g., Dyson swarms or similar concepts).</li>
+          <li>Likely leaves detectable technosignatures in starlight, heat, or radio emissions.</li>
+          <li>Requires advanced engineering, long-term planning, and stable cosmic infrastructure.</li>
+        </ul>
+
+        <h3>How SETI relates to Type II civilizations</h3>
+        <p>
+          When researchers search for unusual signals or energy patterns, they are not only looking
+          for simple radio messages. Some investigations focus on anomalies in starlight, waste heat,
+          or narrowband signals that could hint at large-scale technology. While no confirmed
+          Type II civilization has been detected, these searches help define what “artificial”
+          might look like on a cosmic scale.
+        </p>
+
+        <p>
+          The rapid-response observations of interstellar objects, like 3I/ATLAS, demonstrate how
+          we can test for technosignatures: by checking for non-natural radio emissions, unusual
+          energy use, or engineered trajectories. Even null results are valuable—they refine our
+          expectations and improve future search strategies.
+        </p>
+
+        <h3>Possible technosignatures</h3>
+        <ul>
+          <li>Unusual dimming or brightening patterns in starlight that suggest large structures.</li>
+          <li>Excess infrared emission consistent with waste heat from megascale engineering.</li>
+          <li>Highly structured, persistent narrowband radio signals that do not match natural sources.</li>
+          <li>Interstellar objects with trajectories or properties inconsistent with known physics or formation.</li>
+        </ul>
+
+        <p class="note">
+          This page is speculative and conceptual. It describes how scientists think about
+          Type II civilizations and what kinds of evidence might hint at their existence,
+          based on current astrophysics and SETI research.
+        </p>
+      </article>
+
+      <!-- Right: “Profile” / metrics panel -->
+      <aside class="card">
+        <h2>Type II Civilization Profile</h2>
+        <p>
+          A hypothetical stellar-scale civilization operating around a single star,
+          using engineered structures and advanced energy management.
+        </p>
+
+        <div class="metric-row">
+          <div class="metric">
+            <div>
+              <div class="metric-label">Energy scale</div>
+              <div>Stellar (Kardashev Type II)</div>
+            </div>
+            <div class="bar" aria-label="Energy scale">
+              <div class="bar-fill" style="--value: 85%;"></div>
+            </div>
+          </div>
+
+          <div class="metric">
+            <div>
+              <div class="metric-label">Technosignature strength</div>
+              <div>Potentially detectable</div>
+            </div>
+            <div class="bar" aria-label="Technosignature strength">
+              <div class="bar-fill" style="--value: 70%;"></div>
+            </div>
+          </div>
+
+          <div class="metric">
+            <div>
+              <div class="metric-label">Megastructure likelihood</div>
+              <div>Conceptual, unconfirmed</div>
+            </div>
+            <div class="bar" aria-label="Megastructure likelihood">
+              <div class="bar-fill" style="--value: 60%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Hypothetical capabilities</h3>
+        <ul>
+          <li>Global or system-wide energy grid spanning orbital platforms and satellites.</li>
+          <li>Long-term climate and orbit engineering for habitability and stability.</li>
+          <li>High-bandwidth interplanetary communication networks.</li>
+          <li>Large-scale data storage and computation using stellar energy.</li>
+        </ul>
+
+        <h3>Detection context</h3>
+        <p>
+          From Earth, we would not see the civilization directly. Instead, we would look for
+          patterns in starlight, heat, and signals that are difficult to explain with natural
+          astrophysical processes alone. Many current surveys are designed to flag such anomalies
+          for deeper investigation.
+        </p>
+
+        <div class="badge-row">
+          <span class="badge strong">Speculative</span>
+          <span class="badge">Astrophysics-informed</span>
+          <span class="badge">No confirmed examples</span>
+          <span class="badge">Search ongoing</span>
+        </div>
+
+        <p class="note">
+          Want to explore more? Return to the
+          <a href="/index.html">Alien Discoveries news feed</a> to see how real observations
+          inspire these civilization concepts.
+        </p>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
